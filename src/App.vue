@@ -19,6 +19,11 @@ export default {
 	components: {
 		navbar,
 		sidebar
+	},
+	watch: {
+		'$route' (to) {
+			document.title = to.meta.title || 'Missing meta.title';
+		}
 	}
 };
 </script>
@@ -33,12 +38,18 @@ export default {
 
 	#sidebar-fix {
 		width: $sidebar-width;
+		@media screen and(max-width: 700px) {
+			width: 0;
+		}
 	}
 
 	.main-box {
 		z-index: 105;
 		width: calc(100vw - #{$sidebar-width});
 		background-color: $main-box-color;
+		@media screen and (max-width: 700px) {
+			width: 100%;
+		}
 	}
 
 	.bx {
@@ -71,6 +82,17 @@ export default {
 
 	.btn {
 		border-radius: calc(#{$border-radius} / 2);
+	}
+
+	.form-control {
+		background-color: transparent;
+		color: rgba(255, 255, 255, 0.7);
+		border-radius: calc(#{$border-radius} / 2);
+		&:focus {
+			box-shadow:0 0 transparent;
+			border-color: transparent transparent white transparent;
+			border:1px solid white;
+		}
 	}
 }
 

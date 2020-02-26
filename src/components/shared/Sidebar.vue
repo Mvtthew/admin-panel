@@ -1,52 +1,69 @@
 <template>
 	<div class="sidebar">
 		<div class="navbar navbar-dark">
-			<a class="navbar-brand" href="#">TMM <small>0.3.1221</small></a>
+			<a class="navbar-brand" href="#">
+				TMM
+				<small>0.3.1221</small>
+			</a>
 		</div>
 		<div class="user mt-4">
-			<div class="avatar">
-				LW
-			</div>
-			<p class="username mt-2">
-				Leszek Wójcik
-			</p>
+			<div class="avatar">LW</div>
+			<p class="username mt-2">Leszek Wójcik</p>
 		</div>
 		<div class="list mt-4">
-			<router-link to="/" class="element py-2"
-				><span class="text">Dashboard</span
-				><i class="bx bxs-dashboard"></i
-			></router-link>
+			<router-link to="/dashboard" class="element py-2">
+				<span class="text">Dashboard</span>
+				<i class="bx bxs-dashboard"></i>
+			</router-link>
 			<div class="elements-devider py-3"></div>
-			<a href="#" class="element py-2"
-				><span class="text">Tournaments</span
-				><i class="bx bx-calendar-star"></i
-			></a>
-			<a href="#" class="element py-2"
-				><span class="text">Players</span><i class="bx bx-user"></i
-			></a>
-			<a href="#" class="element py-2"
-				><span class="text">Teams</span><i class="bx bx-user-plus"></i
-			></a>
+			<a href="#" class="element py-2">
+				<span class="text">Tournaments</span>
+				<i class="bx bx-calendar-star"></i>
+			</a>
+			<a href="#" class="element py-2">
+				<span class="text">Players</span>
+				<i class="bx bx-user"></i>
+			</a>
+			<a href="#" class="element py-2">
+				<span class="text">Teams</span>
+				<i class="bx bx-user-plus"></i>
+			</a>
 			<div class="elements-devider py-3"></div>
-			<router-link to="/servers" class="element py-2"
-				><span class="text">Servers</span><i class="bx bx-server"></i
-			></router-link>
+			<a href="#" class="element py-2">
+				<span class="text">Tournaments</span>
+				<i class="bx bx-calendar-star"></i>
+			</a>
+			<a href="#" class="element py-2">
+				<span class="text">Players</span>
+				<i class="bx bx-user"></i>
+			</a>
+			<a href="#" class="element py-2">
+				<span class="text">Teams</span>
+				<i class="bx bx-user-plus"></i>
+			</a>
 			<div class="elements-devider py-3"></div>
-			<a href="#" class="element py-2"
-				><span class="text">Nitro</span><i class="bx bx-meteor"></i
-			></a>
+			<router-link to="/servers" class="element py-2">
+				<span class="text">Servers</span>
+				<i class="bx bx-server"></i>
+			</router-link>
 			<div class="elements-devider py-3"></div>
-			<a href="#" class="element py-2"
-				><span class="text">Help</span
-				><i class="bx bx-comment-error"></i
-			></a>
-			<a href="#" class="element py-2"
-				><span class="text">Account settings</span
-				><i class="bx bx-user-check"></i
-			></a>
-			<a href="#" class="element py-2"
-				><span class="text">Logout</span><i class="bx bx-log-out"></i
-			></a>
+			<a href="#" class="element py-2">
+				<span class="text">Nitro</span>
+				<i class="bx bx-meteor"></i>
+			</a>
+			<div class="elements-devider py-3"></div>
+			<a href="#" class="element py-2">
+				<span class="text">Help</span>
+				<i class="bx bx-comment-error"></i>
+			</a>
+			<a href="#" class="element py-2">
+				<span class="text">Account settings</span>
+				<i class="bx bx-user-check"></i>
+			</a>
+			<a href="#" class="element py-2">
+				<span class="text">Logout</span>
+				<i class="bx bx-log-out"></i>
+			</a>
 		</div>
 	</div>
 </template>
@@ -95,13 +112,30 @@ export default {
 	}
 
 	.list {
+		direction: rtl;
+		height: 67vh;
+		overflow: hidden;
+		overflow-y: scroll;
+
+		// Scroll
+		&::-webkit-scrollbar {
+			width: 0.25rem;
+			background-color: $sidebar-color;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $accent-color;
+		}
+
 		.elements-devider {
-			width: 90%;
+			width: 85%;
 			margin: auto;
 			position: relative;
 			&:after {
 				content: "";
-				height: 2px;
+				height: 1px;
 				background-color: rgba(255, 255, 255, 0.3);
 				width: 100%;
 				position: absolute;
@@ -109,6 +143,7 @@ export default {
 			}
 		}
 		.element {
+			direction: ltr;
 			transition: 0.18s all;
 			color: rgba(255, 255, 255, 0.5);
 			display: flex;
@@ -117,7 +152,7 @@ export default {
 			margin-left: auto;
 			position: relative;
 			text-align: center;
-			font-size: 1.2rem;
+			font-size: 1rem;
 			&:hover,
 			&.router-link-exact-active {
 				color: rgba(255, 255, 255, 1) !important;
