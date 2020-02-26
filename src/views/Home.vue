@@ -6,13 +6,6 @@
 		<p>
 			Not much to do here... yet!
 		</p>
-		<div class="options mt-5">
-			<button class="btn btn-info mr-2">Create tournament</button
-			><i class="bx bx-right-arrow-alt mr-2"></i>
-			<button class="btn btn-warning mr-2">Add players</button
-			><i class="bx bx-right-arrow-alt mr-2"></i>
-			<button class="btn btn-success mr-2">Create team</button>
-		</div>
 	</div>
 </template>
 

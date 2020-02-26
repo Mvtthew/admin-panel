@@ -1,7 +1,7 @@
 <template>
 	<div class="sidebar">
 		<div class="navbar navbar-dark">
-			<a class="navbar-brand" href="#">TTMT <small>0.3.1221</small></a>
+			<a class="navbar-brand" href="#">TMM <small>0.3.1221</small></a>
 		</div>
 		<div class="user mt-4">
 			<div class="avatar">

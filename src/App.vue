@@ -51,7 +51,7 @@ export default {
 
 	.card {
 		//z-index: 150;
-		border-radius: $border-radius;
+		border-radius: calc(#{$border-radius} / 2);
 		box-shadow: $box-shadow;
 		background-color: $card-color;
 	}
@@ -72,5 +72,17 @@ export default {
 	.btn {
 		border-radius: calc(#{$border-radius} / 2);
 	}
+}
+
+// Scrollbar
+body::-webkit-scrollbar {
+	width: 0.25rem;
+	background-color: $main-box-color;
+}
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+body::-webkit-scrollbar-thumb {
+	background-color: $accent-color;
 }
 </style>

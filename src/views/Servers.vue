@@ -1,8 +1,11 @@
 <template>
 	<div class="servers">
-		<h1 class="display-4 mb-4">
+		<h1 class="display-4 mb-0">
 			Servers
 		</h1>
+		<p class="mb-4">
+			You got <strong>4</strong> servers online and <strong>0</strong> offline. 
+		</p>
 		<div class="row">
 			<server v-for="i in 4" :key="i"></server>
 		</div>
