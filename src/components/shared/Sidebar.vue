@@ -2,8 +2,8 @@
 	<div class="sidebar">
 		<div class="navbar navbar-dark">
 			<a class="navbar-brand" href="#">
-				TMM
-				<small>0.3.1221</small>
+				{{$store.getters.getAppName}}
+				<small>{{$store.getters.getAppVersion}}</small>
 			</a>
 		</div>
 		<div class="user mt-4">
@@ -15,19 +15,6 @@
 				<span class="text">Dashboard</span>
 				<i class="bx bxs-dashboard"></i>
 			</router-link>
-			<div class="elements-devider py-3"></div>
-			<a href="#" class="element py-2">
-				<span class="text">Tournaments</span>
-				<i class="bx bx-calendar-star"></i>
-			</a>
-			<a href="#" class="element py-2">
-				<span class="text">Players</span>
-				<i class="bx bx-user"></i>
-			</a>
-			<a href="#" class="element py-2">
-				<span class="text">Teams</span>
-				<i class="bx bx-user-plus"></i>
-			</a>
 			<div class="elements-devider py-3"></div>
 			<a href="#" class="element py-2">
 				<span class="text">Tournaments</span>
@@ -60,10 +47,10 @@
 				<span class="text">Account settings</span>
 				<i class="bx bx-user-check"></i>
 			</a>
-			<a href="#" class="element py-2">
+			<router-link to="/auth" class="element py-2">
 				<span class="text">Logout</span>
 				<i class="bx bx-log-out"></i>
-			</a>
+			</router-link>
 		</div>
 	</div>
 </template>

@@ -15,7 +15,6 @@ new Vue({
 import 'jquery/dist/jquery.js';
 
 // Bootstrap 4
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 // Boxicons

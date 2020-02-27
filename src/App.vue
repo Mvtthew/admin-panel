@@ -21,8 +21,10 @@ export default {
 		sidebar
 	},
 	watch: {
-		'$route' (to) {
-			document.title = to.meta.title || 'Missing meta.title';
+		$route(to) {
+			document.title =
+				to.meta.title + " | " + this.$store.getters.getAppName ||
+				"Missing meta.title";
 		}
 	}
 };
@@ -81,17 +83,19 @@ export default {
 	}
 
 	.btn {
-		border-radius: calc(#{$border-radius} / 2);
+		border-radius: calc(#{$border-radius} / 3);
 	}
 
 	.form-control {
+		position: relative;
 		background-color: transparent;
 		color: rgba(255, 255, 255, 0.7);
-		border-radius: calc(#{$border-radius} / 2);
+		border: 0;
+		border-radius: 0;
+		border-bottom: 3px solid rgba(255, 255, 255, 0.2);
 		&:focus {
-			box-shadow:0 0 transparent;
-			border-color: transparent transparent white transparent;
-			border:1px solid white;
+			box-shadow: 0 0 transparent !important;
+			border-bottom: 3px solid white;
 		}
 	}
 }
